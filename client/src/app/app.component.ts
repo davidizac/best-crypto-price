@@ -26,13 +26,12 @@ export class AppComponent {
     this.appService.getBestPrice(symbol1, symbol2)
     .subscribe((res: any) => {
       this.SpinnerService.hide();  
-      this.ticker = res.ticker
       this.bestExchanges = res.bestExchanges
     })
   }
 
   getImagePath(exchange){ 
-    return `../assets/images/${exchange}.png`
+    return `../assets/images/${exchange.exchange}.png`
   }
 
   ngOnInit(){

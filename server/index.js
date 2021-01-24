@@ -4,7 +4,7 @@ let http = require('http').Server(app);
 let io = require('socket.io')(http);
 const getBestTickers = require('./get-best-ticker')
 const bodyParser = require("body-parser");
-
+const path = require('path')
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(

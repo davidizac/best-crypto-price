@@ -39,12 +39,13 @@ module.exports = async (symbol) => {
     const bestExchanges = _.sortBy(tickers, 'ask')
     console.log(new Date())
     return {
-      ticker:{
-        ask: bestExchanges[0].ask,
-        bid: bestExchanges[0].bid,
-        exchange: bestExchanges[0].exchange,
-      },
-      bestExchanges: bestExchanges.map(e => e.exchange).slice(0,3)
+      bestExchanges: bestExchanges.map(e => {
+        return {
+          ask: e.ask,
+          bid: e.bid,
+          exchange: e.exchange,
+        }
+      }).slice(0,3)
     }
 
 }

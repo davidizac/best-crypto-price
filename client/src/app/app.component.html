@@ -11,28 +11,27 @@
         <p>Get best price</p>
       </div>
     </div>
-    <div  *ngIf="ticker" class="ticker-info">
+    <div  *ngIf="bestExchanges" class="ticker-info">
       <h3>Best price:</h3>
-      <div>
-        <div class="field">
-          <label>Bid:</label>
-          <span><strong>{{ticker?.bid}}</strong></span>
-        </div>
-        <div class="field">
-          <label>Ask:</label>
-          <span><strong>{{ticker?.ask}}</strong></span>
-        </div>
-        <div class="field">
-          <label>Exchange:</label>
-          <span><strong>{{ticker?.exchange}}</strong></span>
-        </div>
-      </div>
       <div class="best-exchange">
-        <div *ngFor="let exchange of bestExchanges; let i = index" id="exchange">
-          <div>
-            <span>#{{i+1}}</span>
+
+        <div *ngFor="let exchange of bestExchanges; let i = index" class="exchanges" >
+          <div id="exchange">
+            <div>
+              <span>#{{i+1}}</span>
+            </div>
+            <img [src]="getImagePath(exchange)">
           </div>
-          <img [src]="getImagePath(exchange)">
+          <div>
+            <div class="field">
+              <label>Bid:</label>
+              <span><strong>{{exchange?.bid}}</strong></span>
+            </div>
+            <div class="field">
+              <label>Ask:</label>
+              <span><strong>{{exchange?.ask}}</strong></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
