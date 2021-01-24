@@ -55,7 +55,7 @@ app.use((req, res, next) => {
 //     });
 // });
 
-app.use(express.static(path.join(__dirname, '../dist')))
+app.use(express.static(path.join(__dirname, './dist')))
 
 app.get('/:symbol/:symbol2', async (req,res) => {
     try{
