@@ -4,8 +4,9 @@
   .content{
     padding: 50px;
     width: 100%;
-    justify-content: space-around;
+    align-items: center;
     display: flex;
+    flex-direction: column;
     .form, .ticker-info{
       width: 50%;
     }
@@ -13,13 +14,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 100px;
-      border-right: 1px solid;
       .input, .button{
         padding: 13px;
       }
       .input input{
-        width: 128px;
+        width: 183px;
+        padding: 20px;
         height: 26px;
       }
       .button button{
@@ -28,6 +28,8 @@
       }
     }
     .ticker-info{
+      padding-top: 50px;
+      border-top: 1px solid;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -39,6 +41,72 @@
           margin-right: 10px;
         }
       }
+      .best-exchange{
+        margin-top: 33px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 338px;
+        #exchange{
+          display: flex;
+          width: 200px;
+          height: 200px;
+          div{
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            span{
+              font-weight: 700;
+              font-size: 26px;
+              display: block;
+            }
+          }
+          img{
+            width: 100%;
+            height: 100%; 
+            object-fit: contain;
+          }
+        }
+      }
     }
   }
 }
+
+.button {
+  padding: 1px 1px;
+  background: #3498db;
+  width: 180px;
+
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 3px;
+
+  p {
+    margin: 0;
+   	font-family: 'Roboto'; 
+	  text-align: center;
+  	text-transform: uppercase;
+    color: #FFF;
+    user-select: none;
+  }
+  
+  &:hover {
+    cursor: pointer;
+  }
+  
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: darken(#f1c40f, 20%);
+    opacity: 0.4;
+    bottom: -30px;
+  }
+}
+

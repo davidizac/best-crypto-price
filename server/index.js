@@ -2,6 +2,33 @@ let app = require('express')();
 let http = require('http').Server(app);
 let io = require('socket.io')(http);
 const getBestTickers = require('./get-best-ticker')
+const bodyParser = require("body-parser");
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Methods",
+      "PUT, GET, POST, DELETE, OPTIONS, PATCH"
+    );
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header("Access-Control-Expose-Headers", "Authorization");
+    if (req.method === "OPTIONS") {
+      return res.sendStatus(200);
+    }
+    next();
+  });
+
+
+  app.use(
+    bodyParser.urlencoded({
+      extended: false
+    })
+  );
+  app.use(bodyParser.json());
 
 // io.on('connection', (socket) => {
 
