@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "ccxt": "^1.40.94",
     "express": "^4.16.1",
     "http": "0.0.0",
     "lodash": "^4.17.20",

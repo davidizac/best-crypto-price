@@ -1,4 +1,5 @@
-let app = require('express')();
+const express = require('express');
+const app = express()
 let http = require('http').Server(app);
 let io = require('socket.io')(http);
 const getBestTickers = require('./get-best-ticker')
@@ -53,6 +54,8 @@ app.use((req, res, next) => {
 //         io.emit('message', {type:'new-message', text: message});    
 //     });
 // });
+
+app.use(express.static(path.join(__dirname, '../dist')))
 
 app.get('/:symbol/:symbol2', async (req,res) => {
     try{

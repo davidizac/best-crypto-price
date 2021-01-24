@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AppService } from './app.service';
 import { NgxSpinnerService } from "ngx-spinner"; 
 declare var TweenMax: any;
+declare var Expo: any;
+declare var Back: any;
 
 @Component({
   selector: 'app-root',
